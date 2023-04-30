@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+  </head>
+  <body id="body">
+    <!-- <div id="firstDiv" class="allDiv">First Div</div> -->
+    <script>
+      //   const allDiv = document.querySelectorAll(".allDiv");
+      //   console.log(allDiv);
+    </script>
+    <!-- <div class="allDiv">Second Div</div> -->
+    <!-- <table>
+      <tr>
+        <td>One</td>
+        <td>Two</td>
+      </tr>
+      <tr>
+        <td>Three</td>
+        <td>Four</td>
+      </tr>
+    </table> -->
+    <button id="clickBtn">Click Me</button>
+    <script>
+      // Root node
+      //   console.log(document.documentElement);
+      //   console.log(document.body);
+      //   console.log(document.head);
+
+      // Children node
+
+      // Show text area along with element
+      //   console.log(document.body.childNodes);
+
+      // Shows tags
+      //   console.log(document.body.children);
+      //   console.log(document.body.firstChild);
+      //   console.log(document.body.lastChild);
+      //   console.log(document.body.firstElementChild);
+      //   console.log(document.body.lastElementChild);
+
+      //   const ulTag = document.body.children[0];
+      //   const firstLi = ulTag.children[0];
+      //   console.log(firstLi);
+      //   const secondLi = ulTag.children[1];
+      //   console.log(secondLi);
+      //   console.log(secondLi.previousElementSibling.textContent);
+
+      // Table Dom Manipulation
+      //   const zeroTag = document.body.children[0];
+      //   console.log(zeroTag);
+
+      //   const tableTag = document.body.children[1];
+
+      //   console.log(tableTag.tBodies[0]);
+      //   console.log(tableTag.tBodies[0].rows[0]);
+      //   console.log(tableTag.tBodies[0].rows[0].cells[0]);
+      //   console.log(tableTag.tBodies[0].rows[0].cells[0].textContent);
+
+      // This gives all the row values.
+      //   console.log(tableTag.rows);
+
+      //   console.log(
+      //     (tableTag.tBodies[0].rows[0].cells[1].style = "background-color: blue;")
+      //   );
+
+      // ID Search
+      //   element.style.background = "red";
+      //   const ulTag = document.getElementById("element");
+      //   ulTag.style.backgroundColor = "blue";
+      //   console.log(ulTag);
+
+      //   const listItems_id = document.querySelector("#element");
+
+      //   const listItems_one = document.querySelector(".list-item");
+      //   console.log(listItems_one);
+
+      //   const listItems_all = document.querySelectorAll(".list-item");
+      //   console.log(listItems_all);
+
+      // This is to select
+
+      //   listItem = document.querySelectorAll("ul > li:last-child");
+      //   console.log(listItem[0].textContent);
+
+      // Static vs Live
+      //   console.log(allDiv);
+
+      // Attribute
+      //   console.log(element.getAttribute("data"));
+      //   console.log(element.setAttribute("order-placed", "pending"));
+      //   console.log(element.removeAttribute("order-placed"));
+      //   console.log(element.hasAttribute("order-placed"));
+      //   console.log(element.attributes);
+
+      // Create and Removing and Updating node elements
+      //   const newDiv = document.createElement("div");
+      //   newDiv.textContent = "hello world";
+      //   newDiv.innerHTML = `<ul id="element" data="valid">
+      //   <li class="list-item">First Element</li>
+      //   <li class="list-item">Second Element</li>
+      //   <li class="list-item">Third Element</li>
+      // </ul>`;
+
+      //   const newText = document.createTextNode("Hello World");
+      //   newDiv.appendChild(newText);
+      //   body.append(newDiv);
+      //   body.prepend(newDiv);
+      //   body.before(newDiv);
+      //   body.after(newDiv);
+      //   firstDiv.replaceWith(newDiv);
+      //   firstDiv.remove();
+
+      // Events
+      //   clickBtn.onclick = function () {
+      //     alert("Thanks for clicking!");
+      //   };
+
+      function callMe() {
+        alert("Thanks Fam!");
+      }
+
+      //   clickBtn.onclick = callMe;
+
+      //   clickBtn.onclick = function () {
+      //     alert("Thanks for clicking");
+      //   };
+
+      // Add event listeners
+
+      clickBtn.addEventListener("click", callMe);
+      clickBtn.addEventListener("click", function () {
+        alert("Thanks for clicking");
+      });
+
+      // removing event listeners
+      clickBtn.removeEventListener("click", callMe);
+    </script>
+  </body>
+</html>
+
+<!-- ___________________________________ NOTES ON CODES ABOVE ________________________________________________________________________________________ -->
+<!-- 
+    So here its important to summarize that out HTML each subset value is a node it 
+    starts off with the html tag and then it breaks to head and then body. Then within the 
+    head there is the title node and then there is string node. When it comes to the body 
+    there is the ul node and there is the li node and there is the text node after that. 
+ -->
+
+<!-- 
+    Root node
+
+    console.log(document.documentElement);
+
+    Here this is showing what the document is referring to and in this case its going to be 
+    HTML here.
+  -->
+
+<!-- 
+    Children node
+    
+    console.log(document.body.childNodes);
+
+    Something worth mentioning here is that we are looking at the childNodes of the body 
+    and in it when we get to the console that were we get the #text "\n    " so the array 
+    is going to be this [#text , ul , #text , script] I have a couple of theory as to why 
+    this happening here the first being that notice the text "\n    " there are 4 spaces here I 
+    think that this has to do with indent amount here then there is the tag of the ul and then 
+    space then script.
+  -->
+
+<!-- 
+    firstChild & lastChild nodes
+
+    So here there is an important thing to understand here and that being the first child is going 
+    to be giving the tab space and the one with the firstElementChild is going to be giving the element 
+    tag itself that is something to be aware of here
+ -->
+
+<!-- 
+    console.log(tableTag.tBodies[0].rows[0].cells[0].textContent);
+    
+    So there is something to mention here the first thing that we need to know is 
+    that we are working with tables here and the way to get to tables is similar and 
+    different compared to using regular tags syntax so here we are using the tableTag then
+    we are using the tBodies[0] then rows[0] then cells[0] then textContent so to get to 
+    one of the tables what we are going to be doing is accessing the table body then the 
+    table row and then table data and then table content that is something to be aware of here.
+ -->
+
+<!-- 
+    ID Manipulation
+    
+    <ul id="element">
+    
+    element.style.background = "red";    
+
+    So here the thing that I wanted to mention was that the word element is going to be 
+    the id that we had created and using that id what we can do is run the css right on it 
+    and notice we are calling the style tag and then changing the background color to red 
+    and doing this we can modify the color of the id element to red this is essentially dom 
+    manipulation
+
+    const ulTag = document.getElementById("element");
+    ulTag.style.backgroundColor = "blue";
+    console.log(ulTag);
+
+    Something that I wanted to mention was that we can modify the classes directly and what else 
+    we can do is use the getElementById and then call the id and save to variable and then modify 
+    it directly as well.
+-->
+
+<!-- 
+    
+    listItem = document.getElementsByClassName("list-item");
+    console.log(listItem);
+
+    console.log(document.getElementsByTagName("table"));
+
+    So here the important thing to understand is that we are using the getElementByClassName and 
+    we are accessing the class in this case its going to be list-item and its going to save that 
+    tag there your going to have an array of objects which you are going to transverse through
+    
+    The second thing that we are learning here is about getElementByTagName and here the thing 
+    that we need to know is that its going to refer to the tag and its going to show HTMLCollection
+-->
+
+<!-- 
+    const listItems_one = document.querySelector(".list-item");
+    console.log(listItems_one);
+
+    const listItems_all = document.querySelectorAll(".list-item");
+    console.log(listItems_all);
+
+    So here something new that I learned was that when it comes to querySelectors there is 
+    querySelector and querySelectorAll and the thing to know here is that the all is going to 
+    be selecting all the occurences of the class and then the querySelector is going for each 
+    occuerence in liner form. 
+-->
+
+<!-- 
+
+    listItem = document.querySelectorAll("ul > li:last-child");
+    console.log(listItem);
+
+    So here something new that I learned was that we can use querySelectorAll and then 
+    chose the unordered list and we can do li:last-child and what this does is that its 
+    going to be selecting the last list item 
+-->
+
+<!-- Static vs Live
+
+    <div class="allDiv">First Div</div>
+    <script>
+        const allDiv = document.getElementsByClassName("allDiv");
+        console.log(allDiv);
+    </script>
+    <div class="allDiv">Second Div</div>
+    
+    console.log(allDiv);
+
+    So here there is something important to understand here and that being we created the first div 
+    with a class called allDiv and they are two of the same here in the script its important to 
+    understand that we are going to be using the getElementByClassName and this is going to be looking 
+    for the class "allDiv" the important thing to understand here is that when using getElementByClassName 
+    its going to understand one div at a time so when we run the first console.log its going to see only 
+    one node and when it comes to the other run in the later script its then going to see another node so 
+    meaning that its a very tedious thing to run each time that is something to be aware of here 
+
+    <div class="allDiv">First Div</div>
+    <script>
+      const allDiv = document.querySelectorAll(".allDiv");
+      console.log(allDiv);
+    </script>
+    <div class="allDiv">Second Div</div>
+
+    console.log(allDiv);
+
+    So here the new thing that I learned when it comes to working with querySelectorAll what this 
+    does is that it stores one instance at a time meaning that each time its going to refer to the 
+    same one that is something to be aware of here what I had thought was that it was going to be 
+    referring one to all rather it was one to one.
+-->
+
+<!--  
+    <ul id="element" data="valid">
+
+    console.log(element.getAttribute("data"));
+    console.log(element.setAttribute("order-placed", "pending"));
+    console.log(element.removeAttribute("order-placed"));
+    console.log(element.hasAttribute("order-placed"));
+    console.log(element.attributes);
+
+    So here there is something new that I learned and that being that we can pass in 
+    an attribute using the id so notice that we are running these methods on the element 
+    which in this case is the id and we are cross referencing it and checking if certain 
+    attributes exist or not and if they do
+-->
+
+<!-- 
+    
+    Create and Removing and Updating node elements
+    
+    const newDiv = document.createElement("div");
+    body.append(newDiv);
+    
+    So here there is something new that I learned and that being that we
+    are creating a node something to be aware of here is we are using the 
+    createElement and the way we are going to be doing this is by creating a 
+    variable and then using document then createElement and then the element 
+    name or new node and all we are doing is appending the newDiv to main body 
+    node using the append this was something cool to learn.
+
+    const newDiv = document.createElement("div");
+    
+    const newText = document.createTextNode("Hello World");
+    newDiv.appendChild(newText);
+    
+    body.append(newDiv);
+
+    So here the two middle lines are basically going to doing the DOM Manip.
+    and the thing to know here is that this is basically DOM changing and it shows how 
+    useful this thing can be we store a new text and then just add to the dom rather then going 
+    back to the HTML and then making changes from there that is something to be aware of here.
+
+-->
+
+<!-- 
+    Events
+
+    <button id="clickBtn" onclick="alert('Hello World')">Click Me</button>
+
+    clickBtn.onclick = function () {
+        alert("Thanks for clicking!");
+    };
+    
+    So here lets examine what is going on the first thing that we need to know is that we are 
+    going to be creating a button and in it we are passing a button id and that is called clickBtn
+    and in that we are passing onclick something that came to my attention here was this that 
+    notice we are passing alert("helloWorld") now onclick means that once the user were to click 
+    here then this will happen and alert is JS where it alerts you the next thing that we are 
+    going to be doing is using the id and then using onclick and then we are going to be running the 
+    function that is called alert() and this is going to be using the id then onclick and then the function
+    that we defined.
+-->
+
+<!-- 
+    Pass Vs Call Function 
+
+    <button id="clickBtn">Click Me</button>
+
+    function callMe() {
+        alert("Thanks Fam!");
+    }
+    
+    clickBtn.onclick = callMe;
+
+    So here we are learning between call and pass the first thing that we need to know is that we 
+    created a button with an id of clickBtn and we then created a function called callMe() and 
+    in it we are going to be passing the alert function and inside it we are going to pass the 
+    string "Thanks fam!" now we are using the id attribute and what this does is that we then run 
+    the onclick on it and when we click the button then its going to callMe so my theory here is this 
+    that when we pass in with the () this is going to fire the function and get the result and pass that 
+    in and when we pass a reference to the function we are going to be passing the function when we click and 
+    what this does is that it then runs the function and it gets a delayed response not an immediate response
+-->
+
+<!-- 
+    Events
+    
+    clickBtn.onclick = function () {
+        alert("Thanks for clicking!");
+    };
+
+    function callMe() {
+        alert("Thanks Fam!");
+    }
+
+    clickBtn.onclick = callMe;
+
+    clickBtn.onclick = function () {
+        alert("Thanks for clicking");
+    };
+
+    Add event listeners
+
+    clickBtn.addEventListener("click", callMe);
+    
+    clickBtn.addEventListener("click", function () {
+        alert("Thanks for clicking");
+    });
+
+    So here we are learning something powerful and that being addEventListener the first thing that we need to know 
+    is that we are using the id and then using the onclick event and creating a function that is going to be alert function
+    the second thing that we are going to be doing is creating a function called callMe and in it we are passing in the alert 
+    function with its different message we are passing in the function to the onclick event to the clickBtn the second thing 
+    that we are going to do be doing is that clickBtn and adding event listener that is going to be running a function called 
+    the alert with its different message we are passing in the function to the onclick event and lastly we are using the addEventListener
+    and the thing to know about it is the first part is going to be what should take place and the second part should be what should 
+    happen when so and so takes place and lets examine the next part and its going to be doing everything we did earlier in one line 
+    the other thing that we need to know here is this that when it comes to using these onclicks what usually ends up happening is that 
+    the more we use them they don't repeat so thats why we also use event listeners so that we can rerun the same function over and over 
+    again.
+-->
