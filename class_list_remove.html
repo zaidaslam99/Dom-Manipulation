@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .myStyle {
+      background-color: coral;
+      padding: 16px;
+    }
+  </style>
+
+  <body>
+    <h1>The DOMToken Object</h1>
+    <h2>The remove() Method</h2>
+
+    <button onclick="myFunction()">Remove</button>
+    <p>Click "Remove" to remove the "myStyle" class from myDIV.</p>
+
+    <div id="myDIV" class="myStyle">
+      <p>I am myDIV.</p>
+    </div>
+
+    <script>
+      function myFunction() {
+        document.getElementById("myDIV").classList.remove("myStyle");
+      }
+    </script>
+  </body>
+</html>
+
+<!--  
+    So we talked about DOM token list but overall this code is similar to the other code that we wrote however there is something 
+    that we need to know notice that in the div there is a class called mystyle and what we are doing is that we are removing the 
+    myStyle class from the class token list.
+
+    So here we need to know we are doing the same thing but notice that at the id we already have the class but we are still using 
+    the DOM to access the tag and all we are doing is using the classList and then using remove and removing the class that is there
+    thus doing this will happen once we press the button that is something to be aware of here. 
+
+-->

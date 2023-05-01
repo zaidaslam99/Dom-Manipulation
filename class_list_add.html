@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .myStyle {
+      background-color: coral;
+      padding: 16px;
+    }
+  </style>
+
+  <body>
+    <h1>The DOMToken Object</h1>
+    <h2>The add() Method</h2>
+
+    <button onclick="myFunction()">Add</button>
+    <p>Click "Add" to add the "myStyle" class to myDIV.</p>
+
+    <div id="myDIV">
+      <p>I am a myDIV.</p>
+    </div>
+
+    <script>
+      function myFunction() {
+        const list = document.getElementById("myDIV").classList;
+        list.add("myStyle");
+      }
+    </script>
+  </body>
+</html>
+
+<!-- 
+    So here we are going to be working with classList something to know is that the classList property 
+    returns the CSS classnames of an element The classList returns a DOMTokenList so in this code we have a 
+    style tag and in it we are going to be having .myStyle class with the background-color and padding 
+    we then have the body tag in it there is h1 and h2 then there is a button with the onclick function 
+    that is going to be myFunction this is going to run when the button is clicked then there is a p tag 
+    then there is a div tag with the id called myDIV and in that div we are going to have the p tag 
+    then there is script tag with the function that we defined and its going to be storing a variable 
+    called list that is using a getElementById and its going to refer to the myDIV notice that we are 
+    using classList one thing I noticed is that we are using classList.
+
+    Now when it comes to classList what it is an array with object classes that we are storing and something 
+    new that I learned was that the reason why we have multiple classes is because they are universal traits 
+    that don't hold onto one value rather they can be used interchangeably as suppose as one at a time 
+    the other thing that we need to know is that id are used as single id card and are constant while class 
+    are not there can be many classes so here we are getting the id using that and then running the classList 
+    and then adding the myStyle class to the class token list.
+    
+    Something really important to understand is that the myFunction is going to run after the button has been 
+    clicked so what we are doing is once clicked we are adding the myStyle to the token list and once doing so 
+    that is going to change our div because that is what our class is oriented towards notice in the myDiv there 
+    is no class there what we are doing is using classList to modify the DOM and once we modify the values such as 
+    the DOM Token list and we are adding classes.
+-->
